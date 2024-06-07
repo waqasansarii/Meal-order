@@ -1,5 +1,4 @@
 import * as React from "react";
-import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
@@ -100,11 +99,6 @@ export default function WeekTabs() {
           </AppBar>
         </Box>
         <Box sx={{ maxWidth: "1100px", margin: "0px auto" }}>
-          <SwipeableViews
-            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-            index={value}
-            onChangeIndex={handleChangeIndex}
-          >
             <TabPanel value={value} index={0} dir={theme.direction}>
               <TabsBody data={meals.allMeals} tab="AllMeal" isWeek={false} />
             </TabPanel>
@@ -120,7 +114,6 @@ export default function WeekTabs() {
             <TabPanel value={value} index={4} dir={theme.direction}>
               <TabsBody data={meals?.week4} tab="week4" isWeek={true} />
             </TabPanel>
-          </SwipeableViews>
         </Box>
       </Box>
     </Box>
